@@ -24,7 +24,10 @@ class Price extends Component {
     }
 
     render() {
-        const billing = this.props.billing == 'week' ? 'week' : 'month';  
+        const billing = this.props.billing == 'week' ? 'week' : 'month'; 
+        if (this.props.price != this.state.price){
+            this.setState({price : this.props.price}) //update data from parent if they are different
+        } 
         if(this.props.value) {
             return this.state.price; 
         } else {
